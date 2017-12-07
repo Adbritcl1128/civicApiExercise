@@ -29,7 +29,7 @@ function renderCandidates(response, rawResponse) {
     var firstOfficialsInfo = firstOfficialsRank.name + ', ' +
      firstOfficialsRank.party + ', ' +
      firstOfficialsRank.urls + ', ' +
-     firstOfficialsRank.phones;
+     firstOfficialsRank.phones + '    ------    ';
      var secondOfficialsInfo = secondOfficialsRank.name + ', ' +
       secondOfficialsRank.party + ', ' +
       secondOfficialsRank.urls + ', ' +
