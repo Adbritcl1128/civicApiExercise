@@ -1,16 +1,4 @@
 
-
-// var api = 'https://www.googleapis.com/civicinfo/v2/voterinfo';
-// var apiKey = 'AIzaSyAIk4uxgqv35HhVRuaNgq_rn4IF4Y73-Lk';
-// var input;
-// function setUp() {
-//    var button = select('#submit');
-//    button.mousePressed(searchAddress);
-//    input = select('#address');
-// }
-//
-// var url = api + input.value() + apiKey;
-// loadJSON(url, gotData);
   /**
    * Build and execute request to look up voter info for provided address.
    * @param {string} address Address for which to fetch voter info.
@@ -23,7 +11,6 @@
      * @type {number}
      */
     var electionId = 2000;
-
     /**
      * Request object for given parameters.
      * @type {gapi.client.HttpRequest}
@@ -69,10 +56,12 @@
     }
   }
 
+  var userInput = ('#address').value;
+
   /**
    * Initialize the API client and make a request.
    */
-  function searchAddress() {
+  function searchAddress(userInput) {
     gapi.client.setApiKey('AIzaSyAIk4uxgqv35HhVRuaNgq_rn4IF4Y73-Lk');
-    lookup("923 neal drive alexandria va", renderResults);
+    lookup(userInput, renderResults);
   }
