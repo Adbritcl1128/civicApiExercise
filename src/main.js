@@ -24,12 +24,18 @@ function renderCandidates(response, rawResponse) {
       response.normalizedInput.state + ' ' +
       response.normalizedInput.zip;
   if (response.offices.length > 0) {
-    var officialsLocation = response.officials[0];
-    var officialsInfo = officialsLocation.name + ', ' +
-     officialsLocation.locationName + ', ' +
-     officialsLocation.party + ', ' +
-     officialsLocation.urls;
-    el.appendChild(document.createTextNode(officialsInfo));
+    var firstOfficialsRank = response.officials[3];
+    var secondOfficialsRank = response.officials[4];
+    var firstOfficialsInfo = firstOfficialsRank.name + ', ' +
+     firstOfficialsRank.party + ', ' +
+     firstOfficialsRank.urls + ', ' +
+     firstOfficialsRank.phones;
+     var secondOfficialsInfo = secondOfficialsRank.name + ', ' +
+      secondOfficialsRank.party + ', ' +
+      secondOfficialsRank.urls + ', ' +
+      secondOfficialsRank.phones;
+    el.appendChild(document.createTextNode(firstOfficialsInfo));
+    el.appendChild(document.createTextNode(secondOfficialsInfo));
   } else {
     el.appendChild(document.createTextNode(
         'Could not find candidate info for ' + normalizedAddress));
