@@ -3,6 +3,7 @@ function lookupCandidate(address, callback) {
 
   var includeOffices = true;
 
+
   var req = gapi.client.request({
     'path' : '/civicinfo/v2/representatives',
     'params' : {'address' : address, 'includeOffices' : includeOffices}
@@ -22,15 +23,22 @@ function renderCandidates(response, rawResponse) {
       response.normalizedInput.city + ', ' +
       response.normalizedInput.state + ' ' +
       response.normalizedInput.zip;
-  if (response.offices > 0) {
-    var offices = response.offices[0].name;
-    var officesInfo = offices.divisionID;
-    el.appendChild(document.createTextNode(officesInfo));
+  if (response.offices.length > 0) {
+    var officialsLocation = response.officials[0];
+    var officialsInfo = officialsLocation.name + ', ' +
+     officialsLocation.locationName + ', ' +
+     officialsLocation.party + ', ' +
+     officialsLocation.urls;
+    el.appendChild(document.createTextNode(officialsInfo));
   } else {
     el.appendChild(document.createTextNode(
-        'Could not find official info for ' + normalizedAddress));
+        'Could not find candidate info for ' + normalizedAddress));
   }
 }
+
+
+
+
 
 
 
