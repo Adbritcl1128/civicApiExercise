@@ -1,4 +1,39 @@
 
+function lookupCandidate(address, callback) {
+
+  var includeOffices = true;
+
+  var req = gapi.client.request({
+    'path' : '/civicinfo/v2/representatives',
+    'params' : {'address' : address, 'includeOffices' : includeOffices}
+  });
+  req.execute(callback);
+}
+
+function renderCandidates(response, rawResponse) {
+  var el = document.getElementById('resultsTwo');
+  if (!response || response.error) {
+    el.appendChild(document.createTextNode(
+      'Error while trying to fetch candidate'));
+      return;
+  }
+
+  var normalizedAddress = response.normalizedInput.line1 + ' ' +
+      response.normalizedInput.city + ', ' +
+      response.normalizedInput.state + ' ' +
+      response.normalizedInput.zip;
+  if (response.offices > 0) {
+    var offices = response.offices[0].name;
+    var officesInfo = offices.divisionID;
+    el.appendChild(document.createTextNode(officesInfo));
+  } else {
+    el.appendChild(document.createTextNode(
+        'Could not find official info for ' + normalizedAddress));
+  }
+}
+
+
+
   /**
    * Build and execute request to look up voter info for provided address.
    * @param {string} address Address for which to fetch voter info.
@@ -34,6 +69,7 @@
           'Error while trying to fetch polling place'));
       return;
     }
+
     var normalizedAddress = response.normalizedInput.line1 + ' ' +
         response.normalizedInput.city + ', ' +
         response.normalizedInput.state + ' ' +
@@ -45,10 +81,6 @@
           pollingLocation.city + ', ' +
           pollingLocation.state + ' ' +
           pollingLocation.zip;
-      var normEl = document.createElement('strong');
-      normEl.appendChild(document.createTextNode(
-          'Polling place for ' + normalizedAddress + ': '));
-      el.appendChild(normEl);
       el.appendChild(document.createTextNode(pollingAddress));
     } else {
       el.appendChild(document.createTextNode(
@@ -56,12 +88,16 @@
     }
   }
 
-  var userInput = ('#address').value;
 
   /**
    * Initialize the API client and make a request.
    */
-  function searchAddress(userInput) {
+  function searchAddress() {
     gapi.client.setApiKey('AIzaSyAIk4uxgqv35HhVRuaNgq_rn4IF4Y73-Lk');
-    lookup(userInput, renderResults);
+    lookup(document.getElementById('address').value, renderResults);
+  }
+
+  function searchOffices() {
+    gapi.client.setApiKey('AIzaSyAIk4uxgqv35HhVRuaNgq_rn4IF4Y73-Lk');
+    lookupCandidate(document.getElementById('address').value, renderCandidates);
   }

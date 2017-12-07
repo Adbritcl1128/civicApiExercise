@@ -8,14 +8,17 @@
       <link href='style.css' rel='stylesheet'>
       <script src="https://apis.google.com/js/client.js?onload=load"></script>
       <script src="src/pollingPlace.js"></script>
-      <!-- <script src="src/candidateInfo.js"></script> -->
     </head>
+    <header class='logoBar'></header>
     <body>
-      <section>
+      <section class='container'>
       <input id="address" value="Enter Address Here">
-      <!-- <button id="submit">Submit</button> -->
-      <button onclick="searchAddress()">Click me</button>
-      <div id="results"></div>
+      <button class='buttonOne' onclick="searchAddress()">Click me for voting location!</button>
+      <button class='buttonTwo' onclick="searchOffices()">Click me for local candidates!</button>
     </section>
+    <section class='resultsContainer'>
+      <div id="results"></div>
+      <div id=resultsTwo></div>
+    </sections>
     </body>
   </html>
