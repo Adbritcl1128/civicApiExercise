@@ -17,12 +17,24 @@
   font-family: "Indie Flower";
 }
 
+@keyframes animationTwo {
+  from{background-color: #98e698;}
+  to{background-color: blue}
+}
+
 .buttonOne {
   width: 250px;
   height: 66px;
   font-size: 1em;
   font-family: "Indie Flower";
   background-color: #98e698;
+  animation-name: animationTwo;
+  animation-duration: 3s;
+}
+
+@keyframes animationThree {
+  from{background-color: #98e698;}
+  to{background-color: blue}
 }
 
 .buttonTwo {
@@ -31,6 +43,13 @@
   font-size: 1em;
   font-family: "Indie Flower";
   background-color: #98e698;
+  animation-name: animationThree;
+  animation-duration: 3s;
+}
+
+@keyframes animationFour {
+  from{background-color: #98e698;}
+  to{background-color: red}
 }
 
 .buttonThree {
@@ -40,6 +59,13 @@
   font-family: "Indie Flower";
   background-color: #98e698;
   margin-right: 30px;
+  animation-name: animationFour;
+  animation-duration: 3s;
+}
+
+@keyframes animationFive {
+  from{background-color: #98e698;}
+  to{background-color: blue}
 }
 
 .buttonFour {
@@ -48,6 +74,8 @@
   font-size: 1em;
   font-family: "Indie Flower";
   background-color: #98e698;
+  animation-name: animationFive;
+  animation-duration: 3s;
 }
 
 .logoBar {
@@ -74,6 +102,11 @@ div#results {
   overflow: scroll;
 }
 
+@keyframes animationSix {
+  from{background-color: red;}
+  to{background-color: blue}
+}
+
 div#resultsTwo {
   display: flex;
   justify-content: space-around;
@@ -87,6 +120,8 @@ div#resultsTwo {
   font-size: 2em;
   background-color: red;
   overflow: scroll;
+  animation-name: animationSix;
+  animation-duration: 3s;
 }
 
 h1 {
@@ -138,6 +173,11 @@ h1 {
 
 .buttonThree:hover {
     background-color: red;
+}
+
+@keyframes animationTwo {
+  from{background-color: #98e698;}
+  to{background-color: red}
 }
 
 .buttonFour:hover {
