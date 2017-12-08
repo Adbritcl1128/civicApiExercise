@@ -88,3 +88,13 @@ function renderCandidates(response, rawResponse) {
     gapi.client.setApiKey('AIzaSyAIk4uxgqv35HhVRuaNgq_rn4IF4Y73-Lk');
     lookupCandidate(document.getElementById('address').value, renderCandidates);
   }
+
+  function deleteLocationData() {
+    var element = document.getElementById('results').innerHTML = "";
+    element.parentNode.removeChild(element);
+  }
+
+  function deleteCandidateData() {
+    var element = document.getElementById('resultsTwo').innerHTML = "";
+    element.parentNode.removeChild(element);
+  }

@@ -33,6 +33,23 @@
   background-color: #98e698;
 }
 
+.buttonThree {
+  width: 250px;
+  height: 66px;
+  font-size: 1em;
+  font-family: "Indie Flower";
+  background-color: #98e698;
+  margin-right: 30px;
+}
+
+.buttonFour {
+  width: 250px;
+  height: 66px;
+  font-size: 1em;
+  font-family: "Indie Flower";
+  background-color: #98e698;
+}
+
 .logoBar {
   display: flex;
   justify-content: space-between;
@@ -101,10 +118,28 @@ h1 {
   width: 80px;
 }
 
+.deleteButtons {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid black;
+  border-top: none;
+  background-color: blue;
+}
+
 .buttonOne:hover {
     background-color: red;
 }
 
 .buttonTwo:hover {
+    background-color: red;
+}
+
+.buttonThree:hover {
+    background-color: red;
+}
+
+.buttonFour:hover {
     background-color: red;
 }
