@@ -29,7 +29,7 @@
   font-family: "Indie Flower";
   background-color: #98e698;
   animation-name: animationTwo;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 
 @keyframes animationThree {
@@ -44,7 +44,7 @@
   font-family: "Indie Flower";
   background-color: #98e698;
   animation-name: animationThree;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 
 @keyframes animationFour {
@@ -60,7 +60,7 @@
   background-color: #98e698;
   margin-right: 30px;
   animation-name: animationFour;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 
 @keyframes animationFive {
@@ -75,7 +75,7 @@
   font-family: "Indie Flower";
   background-color: #98e698;
   animation-name: animationFive;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 
 .logoBar {
@@ -121,7 +121,7 @@ div#resultsTwo {
   background-color: red;
   overflow: scroll;
   animation-name: animationSix;
-  animation-duration: 3s;
+  animation-duration: 5s;
 }
 
 h1 {
