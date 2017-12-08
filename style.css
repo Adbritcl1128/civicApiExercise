@@ -57,7 +57,7 @@
   height: 115px;
   border: 2px solid black;
   border-bottom: 0px;
-  background-color: red;
+  background-color: blue;
 }
 
 div#results {
@@ -142,4 +142,16 @@ h1 {
 
 .buttonFour:hover {
     background-color: red;
+}
+
+@keyframes animation {
+    from {background-color: blue;}
+    to {background-color: red;}
+}
+
+
+.container {
+    background-color: red;
+    animation-name: animation;
+    animation-duration: 5s;
 }
