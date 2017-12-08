@@ -1,14 +1,16 @@
-{
-  "name": "assessmentprojectsoftedge",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "civic-info": "0.0.5"
-  }
+"name": "assessmentprojectsoftedge",
+"version": "1.0.0",
+"main": "index.js",
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "http-server ./src/ -p $PORT"
+},
+"author": "",
+"license": "ISC",
+"description": "",
+"dependencies": {
+  "civic-info": "0.0.5",
+  "script": "^0.1.4",
+  "start": "^5.1.0"
+}
 }
