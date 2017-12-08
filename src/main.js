@@ -1,9 +1,7 @@
-
+// Voting Location
 function lookupCandidate(address, callback) {
 
   var includeOffices = true;
-
-
   var req = gapi.client.request({
     'path' : '/civicinfo/v2/representatives',
     'params' : {'address' : address, 'includeOffices' : includeOffices}
@@ -42,40 +40,19 @@ function renderCandidates(response, rawResponse) {
   }
 }
 
+//Senators and Congressman
 
+  function lookup(address, callback) {
 
-
-
-
-
-  /**
-   * Build and execute request to look up voter info for provided address.
-   * @param {string} address Address for which to fetch voter info.
-   * @param {function(Object)} callback Function which takes the
-   *     response object as a parameter.
-   */
-   function lookup(address, callback) {
-   /**
-     * Election ID for which to fetch voter info.
-     * @type {number}
-     */
     var electionId = 2000;
-    /**
-     * Request object for given parameters.
-     * @type {gapi.client.HttpRequest}
-     */
     var req = gapi.client.request({
         'path' : '/civicinfo/v2/voterinfo',
         'params' : {'electionId' : electionId, 'address' : address}
     });
-   req.execute(callback);
+    req.execute(callback);
   }
 
-  /**
-   * Render results in the DOM.
-   * @param {Object} response Response object returned by the API.
-   * @param {Object} rawResponse Raw response from the API.
-   */
+
   function renderResults(response, rawResponse) {
     var el = document.getElementById('results');
     if (!response || response.error) {
@@ -102,10 +79,6 @@ function renderCandidates(response, rawResponse) {
     }
   }
 
-
-  /**
-   * Initialize the API client and make a request.
-   */
   function searchAddress() {
     gapi.client.setApiKey('AIzaSyAIk4uxgqv35HhVRuaNgq_rn4IF4Y73-Lk');
     lookup(document.getElementById('address').value, renderResults);
